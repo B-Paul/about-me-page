@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: "PT Serif", Cambria, serif;
+}
+
+p {
+  margin: .6em 0;
+}
+
+a {
+  color: #B60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: #DA0;
+}
+
+a:hover {
+  color: #D00;
+}
+
+.masthead {
+  background: #B60;
+  height: 22em;
+}
+
+.masthead-image-mask {
+  position: absolute;
+  height: 18em;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.masthead-image {
+  width: 115%;
+  height: 115%;
+  margin: -.01em 0 0 -1.5em;
+  background: url("https://ununsplash.imgix.net/reserve/zU6fwmDaSVWZdCXcZfot_IMG_3838.JPG?q=75&fm=jpg&s=d29d60fdb60dc13678a6c7a53babcde4") no-repeat center center; 
+  background-size: cover;
+
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+  
+  /* I think ideally I'd use a looping video clip of a tree with swaying
+  branches, but right now this subtle animation pleases my fidgety self. Not
+  sure if anyone will even notice it */
+  -webkit-animation: cover-animate 10s infinite alternate;
+          animation: cover-animate 10s infinite alternate;
+}
+
+@-webkit-keyframes cover-animate {
+  100% {
+    -webkit-transform: rotate(.5deg);
+            transform: rotate(.5deg);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+@keyframes cover-animate {
+  100% {
+    -webkit-transform: rotate(.5deg);
+            transform: rotate(.5deg);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+.masthead-greeting,
+.masthead-intro,
+.masthead-tag {
+  position: relative;
+  font-family: Lato, Verdana, sans-serif;
+  text-align: center;
+  display: block;
+  color: white;
+  margin: auto;
+}
+
+.masthead-greeting {
+  font-size: 12.5em;
+  font-weight: 300;
+  height: 1.2em;
+  margin: -.2em auto;
+}
+
+.masthead-intro {
+  font-size: 5.25em;
+  font-weight: 900;
+  height: 1.15em;
+}
+
+.masthead-tag {
+  font-size: 2.75em;
+  height: 1.4em;
+  margin: 0.8em auto;
+}
+
+.introduction::before {
+  /* Subtle background that ties the masthead to the content */
+  content: url("http://upload.wikimedia.org/wikipedia/commons/b/b1/Orange_Blossom_%28NGM_XXXI_p504%29.jpg");
+  width: 18.75em;
+  position: absolute;
+  top: -2.5em;
+  left: -7.5em;
+  z-index: -1;
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+  opacity: 0.15;
+}
+
+.introduction,
+.where-from,
+.more-about{
+  position: relative;
+  margin: 0 auto;
+  max-width: 30em;
+}
+
+.section-header {
+  font-family: Lato, Verdana, sans-serif;
+  color: #B60;
+  margin: 1.25em 0 0 0;
+}
+
+.question {
+  color: #DA0;
+  font-weight: bold;
+}
+
+.content-footer {
+  background: #B60;
+  color: white;
+  text-align: center;
+  padding: 1em 0 1.5em 0;
+  margin-top: 2.75em;
+  font-size: 1.1em;
+}
+
+.content-footer a, .content-footer a:visited {
+  color: white;
+}
+
+.content-footer a:hover {
+  color: #DA0;
+}
+
+.social-links, .attrib-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 .75em;
+}
+
+.attrib-links li {
+  margin-bottom: 1em;
+}
+
+.content-footer p {
+  margin: 1em 0 .25em 0;
+}
+
+@media only screen and (max-width: 520px) {
+  .masthead {
+    height: 14em;
+  }
+
+  .masthead-image {
+    height: 13em;
+  }
+
+  /* There's not nearly as much of a font-size difference in this smaller
+  configuration, so we're going with a more traditional hierarchy of
+  font-weights*/
+  .masthead-intro {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 2em;
+  }
+
+  .masthead-greeting {
+    font-size: 5.5em;
+    font-weight: 800;
+    line-height: 2em;
+  }
+
+  .masthead-tag {
+    display: none;
+  }
+
+  section, footer {
+    /* Here I'm overriding the left and right portions of the composite rule
+    applied to the footer */
+    padding-right: 1.5em !important;
+    padding-left: 1.5em !important;
+  }
+}
